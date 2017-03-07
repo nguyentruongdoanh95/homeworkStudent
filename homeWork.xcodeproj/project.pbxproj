@@ -8,20 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		9FC6D6431E6E5D4500EA4C7A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6D6421E6E5D4500EA4C7A /* AppDelegate.swift */; };
-		9FC6D6451E6E5D4500EA4C7A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6D6441E6E5D4500EA4C7A /* ViewController.swift */; };
 		9FC6D6481E6E5D4500EA4C7A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC6D6461E6E5D4500EA4C7A /* Main.storyboard */; };
 		9FC6D64A1E6E5D4500EA4C7A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FC6D6491E6E5D4500EA4C7A /* Assets.xcassets */; };
 		9FC6D64D1E6E5D4500EA4C7A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FC6D64B1E6E5D4500EA4C7A /* LaunchScreen.storyboard */; };
+		9FC6D6551E6E5D9D00EA4C7A /* Student.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6D6541E6E5D9D00EA4C7A /* Student.swift */; };
+		9FC6D6571E6E5DB800EA4C7A /* StudentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FC6D6561E6E5DB800EA4C7A /* StudentTableViewCell.swift */; };
+		9FFD78F41E6F74F20045E2A8 /* MasterTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9FFD78F31E6F74F20045E2A8 /* MasterTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		9FC6D63F1E6E5D4400EA4C7A /* homeWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = homeWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FC6D6421E6E5D4500EA4C7A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9FC6D6441E6E5D4500EA4C7A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		9FC6D6471E6E5D4500EA4C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9FC6D6491E6E5D4500EA4C7A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FC6D64C1E6E5D4500EA4C7A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FC6D64E1E6E5D4500EA4C7A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9FC6D6541E6E5D9D00EA4C7A /* Student.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Student.swift; sourceTree = "<group>"; };
+		9FC6D6561E6E5DB800EA4C7A /* StudentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StudentTableViewCell.swift; sourceTree = "<group>"; };
+		9FFD78F31E6F74F20045E2A8 /* MasterTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MasterTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,7 +59,9 @@
 			isa = PBXGroup;
 			children = (
 				9FC6D6421E6E5D4500EA4C7A /* AppDelegate.swift */,
-				9FC6D6441E6E5D4500EA4C7A /* ViewController.swift */,
+				9FFD78F31E6F74F20045E2A8 /* MasterTableViewController.swift */,
+				9FC6D6561E6E5DB800EA4C7A /* StudentTableViewCell.swift */,
+				9FC6D6541E6E5D9D00EA4C7A /* Student.swift */,
 				9FC6D6461E6E5D4500EA4C7A /* Main.storyboard */,
 				9FC6D6491E6E5D4500EA4C7A /* Assets.xcassets */,
 				9FC6D64B1E6E5D4500EA4C7A /* LaunchScreen.storyboard */,
@@ -137,8 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FC6D6451E6E5D4500EA4C7A /* ViewController.swift in Sources */,
+				9FC6D6551E6E5D9D00EA4C7A /* Student.swift in Sources */,
 				9FC6D6431E6E5D4500EA4C7A /* AppDelegate.swift in Sources */,
+				9FFD78F41E6F74F20045E2A8 /* MasterTableViewController.swift in Sources */,
+				9FC6D6571E6E5DB800EA4C7A /* StudentTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +310,7 @@
 				9FC6D6531E6E5D4500EA4C7A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
