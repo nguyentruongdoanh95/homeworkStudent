@@ -9,7 +9,7 @@
 import UIKit
 
 class MasterTableViewController: UITableViewController {
-
+    
     var arrStudent: [Student] = [Student]()
     
     var filePath: String {
@@ -18,15 +18,21 @@ class MasterTableViewController: UITableViewController {
         return url!.appendingPathComponent("Data").path
     }
     
+    @IBOutlet weak var displayView: UIView!
+    @IBOutlet weak var message: UILabel!
+    var isEmpty:Bool!
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
+        let attributeText = NSMutableAttributedString(attributedString: NSAttributedString(string: "📃 Data is empty.\n", attributes: [NSForegroundColorAttributeName: UIColor.red]))
+        attributeText.append(NSAttributedString(string: "Please press the '+' button to add data."))
+        message.attributedText = attributeText
         addBarButtonItem()
+        message.isHidden = true
+        displayView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: tableView.frame.height))
+        checkDataIsEmpty()
+        
     }
-
+    
     func addBarButtonItem() {
         let add = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(MasterTableViewController.addData(sender:)))
         navigationItem.rightBarButtonItem = add
@@ -57,11 +63,35 @@ class MasterTableViewController: UITableViewController {
         present(arletVC, animated: true, completion: nil)
         
     }
-    
+    // Kiểm tra lần đầu khi chạy
+    func checkDataIsEmpty() {
+        if arrStudent.count > 0 {
+            isEmpty = false
+            showMessageIfDataIsEmpty()
+        } else {
+            isEmpty = true
+            showMessageIfDataIsEmpty()
+        }
+    }
+    // Show message
+    func showMessageIfDataIsEmpty() {
+      
+        if isEmpty == true {
+            message.isHidden = false
+        } else {
+            message.isHidden = true
+        }
+    }
     fileprivate func saveData() {
         let isSuccessfulSave = NSKeyedArchiver.archiveRootObject(arrStudent, toFile: filePath)
         if isSuccessfulSave {
-            print("Save thành công")
+            if arrStudent.count == 0 {
+                isEmpty = true
+                showMessageIfDataIsEmpty()
+            } else {
+                isEmpty = false
+                showMessageIfDataIsEmpty()
+            }
         } else {
             print("Save thất bại")
         }
@@ -70,22 +100,22 @@ class MasterTableViewController: UITableViewController {
     func loadData() -> [Student]? {
         return NSKeyedUnarchiver.unarchiveObject(withFile: filePath) as? [Student]
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
     // MARK: - Table view data source
-
+    
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return arrStudent.count
     }
-
+    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! StudentTableViewCell
@@ -95,13 +125,13 @@ class MasterTableViewController: UITableViewController {
         return cell
     }
     
-
-  
+    
+    
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
-
-  
+    
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
@@ -109,8 +139,8 @@ class MasterTableViewController: UITableViewController {
             self.saveData()
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
-          
-        }    
+            
+        }
     }
-
+    
 }

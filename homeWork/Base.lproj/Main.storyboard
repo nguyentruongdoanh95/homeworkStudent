@@ -17,6 +17,27 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="EgH-M4-82Q">
+                            <rect key="frame" x="0.0" y="137" width="375" height="347"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ENB-eP-kpO">
+                                    <rect key="frame" x="-0.5" y="123.5" width="375" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="100" id="MK1-hA-cyP"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="ENB-eP-kpO" firstAttribute="width" secondItem="EgH-M4-82Q" secondAttribute="width" id="46i-dw-naJ"/>
+                                <constraint firstItem="ENB-eP-kpO" firstAttribute="centerX" secondItem="EgH-M4-82Q" secondAttribute="centerX" id="95y-xw-foC"/>
+                                <constraint firstItem="ENB-eP-kpO" firstAttribute="centerY" secondItem="EgH-M4-82Q" secondAttribute="centerY" id="RG3-Pa-DYc"/>
+                            </constraints>
+                        </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="109" id="YMc-8o-GjV" customClass="StudentTableViewCell" customModule="homeWork" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="109"/>
@@ -78,10 +99,14 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0vO-sX-yL6"/>
+                    <connections>
+                        <outlet property="displayView" destination="EgH-M4-82Q" id="Zx3-ao-9yU"/>
+                        <outlet property="message" destination="ENB-eP-kpO" id="oG0-uN-WnJ"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uDH-Zm-TH9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="942" y="-368"/>
+            <point key="canvasLocation" x="866.39999999999998" y="-368.36581709145429"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="5gO-tW-esb">
